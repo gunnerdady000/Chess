@@ -1,4 +1,4 @@
-class GenericPiece(object):
+class GenericMoves(object):
     def __init__(self, color, piece_value):
         self.color = color
         self.piece_value = piece_value
@@ -221,6 +221,17 @@ class GenericPiece(object):
         # convert rank and file to return new position
         new_position = self.inverse_coordinate_dict[updated_file] + str(updated_rank)
         self.position_update(current_position, new_position)
+
+    def promote(self, current_position, number_of_ranks):
+        # if entering Row 8 as white, or Row 1 as Black, promote piece
+        if self.color.lower() == "white" and current_position[1] == str(abs(number_of_ranks)):
+            print("Select Promoted White Piece")
+        elif self.color.lower() == "black" and current_position[1] == "1":
+            print("Select Promoted Black Piece")
+        else:
+            print("Promotion Error") # Remove this once the board is done
+            return False
+        return True
 
     @staticmethod
     def check_boundary(updated_position, boundary_min_value=1, boundary_max_value=8):

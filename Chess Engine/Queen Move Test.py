@@ -1,7 +1,7 @@
-from Pieces import QueenPiece
+from PieceMoves import QueenMoves
 
 def main():
-    piece = QueenPiece("Black")
+    piece = QueenMoves("Black")
     print("Left or Right")
     piece.move_rank("h7", "Left", 1)
     piece.move_rank("h2", "Left", 6)

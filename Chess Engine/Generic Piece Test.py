@@ -12,6 +12,19 @@ def knight_test(piece, cur_pos):
     piece.move_lshape(cur_pos, "NNE", 1, 2)
 
 
+def pawn_test(piece):
+    piece.color = "Black"
+    piece.promote("h7", 8)
+    piece.promote("h8", 8)
+    piece.promote("a1", 8)
+    piece.promote("a2", 8)
+    piece.color = "White"
+    piece.promote("h7", 8)
+    piece.promote("h8", 8)
+    piece.promote("a1", 8)
+    piece.promote("a2", 8)
+
+
 def main():
     piece = GenericPiece("Black", "9")
     print("Left or Right")
@@ -45,6 +58,8 @@ def main():
     print("Edge Case 1")
     cur_pos = "a1"
     knight_test(piece, cur_pos)
+    print("Test Pawn Promotion")
+    pawn_test(piece)
 
 
 # Using the special variable
