@@ -1,4 +1,4 @@
-from GenericPiece import GenericPiece
+from GenericMoves import GenericMoves
 
 
 def knight_test(piece, cur_pos):
@@ -26,7 +26,7 @@ def pawn_test(piece):
 
 
 def main():
-    piece = GenericPiece("Black", "9")
+    piece = GenericMoves("Black", "9")
     print("Left or Right")
     piece.move_sideways("h7", "Left", 1)
     piece.move_sideways("h2", "Left", 6)
